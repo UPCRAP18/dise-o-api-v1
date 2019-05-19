@@ -16,9 +16,9 @@
   $data = json_decode(file_get_contents("php://input"));
 
   if($user->crear_usuario($data->nombre, $data->email, $data->apellido_paterno, $data->apellido_materno, $data->nickname, $data->password)){
-    echo json_encode(array("success"=>"true"));
+    echo json_encode(array("success"=>true));
   }
   else{
-    echo json_encode(array("success"=>"false"));
+    echo json_encode(array("success"=>false));
   }
 ?>

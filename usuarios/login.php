@@ -24,6 +24,7 @@
     extract($row);
 
     echo json_encode(array(
+      "success"=>true,
       "id"=>$id,
       "nombre"=>$nombre,
       "email"=>$email,
@@ -34,7 +35,9 @@
 
   }else {
     //No hay datos
-    echo json_encode(array("message"=>"No se ha encontrado ningun usuario"));
+    echo json_encode(array(
+      "success"=>false,
+      "message"=>"No se ha encontrado ningun usuario"));
   }
 
 ?>
