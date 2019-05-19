@@ -36,14 +36,6 @@
       }
     }
 
-    //Funcion para obtener todos los usuarios --> No muy conveniente
-    /*public function leer_productos(){
-      $query = "SELECT * FROM ".$this->table_name." ORDER BY nombre DESC";
-      $stmt = $this->connection->prepare($query);
-      $stmt->execute();
-      return $stmt;
-    }*/
-
     //Funcion para obtener un solo usuario --> Login
     function login_user($email, $pwd){
       $query = "SELECT * FROM ".$this->table_name." WHERE email = :email AND password = :pwd";
@@ -65,11 +57,6 @@
       $stmt->bindParam(":nick",$nickname);
       $stmt->bindParam(":id",$id);
 
-
-    }
-
-    //Funcion para eliminar un producto
-    function delete_producto($id_producto){
 
     }
 

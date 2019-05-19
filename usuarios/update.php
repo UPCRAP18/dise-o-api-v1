@@ -13,12 +13,18 @@
 
   $user = new User($connection);
 
-  $data = json_decode(file_get_contents("php://input"));
+  //$data = json_decode(file_get_contents("php://input"));
+  $nombre = $_POST['nombre'];
+  $ap_pat = $_POST['apellido_paterno'];
+  $ap_mat = $_POST['apellido_materno'];
+  $email = $_POST['email'];
+  $nick = $_POST['nickname'];
+  $id = $_POST['id'];
 
-  if($user->update_usuario($data->id,$data->nombre, $data->email, $data->apellido_paterno, $data->apellido_materno, $data->nickname)){
-    echo json_encode(array("success"=>"true"));
+  if($user->update_usuario($id,$nombre, $email, $apellido_paterno, $apellido_materno, $nick)){
+    echo json_encode(array("success"=>true));
   }
   else{
-    echo json_encode(array("success"=>"false"));
+    echo json_encode(array("success"=>false));
   }
 ?>
