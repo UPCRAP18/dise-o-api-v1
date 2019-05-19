@@ -40,11 +40,13 @@
         array_push($products["productos"], $p);
     }
 
+    echo json_encode($products);
+
   }else {
     //No hay datos
     echo json_encode(array(
       "success"=>false,
-      "message"=>"No se ha encontrado ningun usuario"));
+      "message"=>"No se ha encontrado ningun producto"));
   }
 
 ?>
