@@ -13,9 +13,11 @@
 
   $user = new User($connection);
 
-  $data = json_decode(file_get_contents("php://input"));
+  //$data = json_decode(file_get_contents("php://input"));
+  $email = $_POST['email'];
+  $password = $_POST["password"];
 
-  $stmt = $user->login_user($data->email, $data->password);
+  $stmt = $user->login_user($email, $password);
   $count = $stmt->rowCount();
   if($count > 0){
     //Hay datos

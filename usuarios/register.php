@@ -13,12 +13,20 @@
 
   $user = new User($connection);
 
-  $data = json_decode(file_get_contents("php://input"));
+  //Si quieres ocupar de una manera profesional esta wea, descomenta aqui
+  //$data = json_decode(file_get_contents("php://input")); --> Formato JSONObject
 
-  if($user->crear_usuario($data->nombre, $data->email, $data->apellido_paterno, $data->apellido_materno, $data->nickname, $data->password)){
-    $response = array();
-    $response['success'] = true;
-    echo json_encode($response);
+  //Formato String
+  $nombre = $_POST['nombre'];
+  $ap_pat = $_POST['apellido_paterno'];
+  $ap_mat = $_POST['apellido_materno'];
+  $email = $_POST['email'];
+  $nick = $_POST['nickname'];
+  $password = $_POST['password'];
+
+
+  if($user->crear_usuario($nombre, $email, $ap_pat, $ap_mat, $nick, $password)){
+    echo json_encode(array("success"=>true));
   }
   else{
     echo json_encode(array("success"=>false));
