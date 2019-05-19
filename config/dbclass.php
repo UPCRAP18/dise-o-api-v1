@@ -1,9 +1,9 @@
 <?php
 	class DBClass {
-		private $host = "localhost";
-		private $username = "root";
-		private $pwd = "";
-		private $db_name = "dise_o_market";
+		private $host = "remotemysql.com";
+		private $username = "2o99AU5EMZ";
+		private $pwd = "m9fwamfUK6";
+		private $db_name = "2o99AU5EMZ";
 		public $connection;
 
 		//Obtiene la conexion a la base de datos
