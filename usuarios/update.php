@@ -20,7 +20,7 @@
   $ap_mat = $_POST['apellido_materno'];
   $email = $_POST['email'];
   $nick = $_POST['nickname'];
-
+  echo $id." ".$nombre;
 
   if($user->update_usuario($id,$nombre, $email, $ap_pat, $ap_mat, $nick)){
     echo json_encode(array("success"=>true));
