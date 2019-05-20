@@ -56,7 +56,6 @@
       $stmt->bindParam(":apellido_mat",$apellido_mat);
       $stmt->bindParam(":nick",$nickname);
       $stmt->bindParam(":id",$id);
-      $stmt->execute();
       if ($stmt->execute()) {
         return true;
       } else {
