@@ -1,6 +1,6 @@
 <?php
   header("Content-Type: application/json; charset=UTF-8");
-  header("Access-Control-Allow-Methods: PATCH");
+  header("Access-Control-Allow-Methods: POST");
   header("Access-Control-Max-Age: 3600");
   header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
@@ -21,7 +21,7 @@
   $nick = $_POST['nickname'];
   $id = $_POST['id'];
 
-  if($user->update_usuario($id,$nombre, $email, $apellido_paterno, $apellido_materno, $nick)){
+  if($user->update_usuario($id,$nombre, $email, $ap_pat, $ap_mat, $nick)){
     echo json_encode(array("success"=>true));
   }
   else{
