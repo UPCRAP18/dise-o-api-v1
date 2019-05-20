@@ -57,8 +57,11 @@
       $stmt->bindParam(":nick",$nickname);
       $stmt->bindParam(":id",$id);
       $stmt->execute();
-      return $stmt;
-
+      if ($stmt->execute()) {
+        return true;
+      } else {
+        return false;
+      }
 
     }
 
