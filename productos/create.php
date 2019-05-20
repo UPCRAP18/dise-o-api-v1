@@ -21,7 +21,7 @@
   $stock = $_POST['stock'];
 
 
-  if($producto->crear_producto($image, $nombre, $precio, $categoria, $subcategoria, $stock)){
+  if($producto->crear_producto($imagen, $nombre, $precio, $categoria, $subcategoria, $stock)){
     echo json_encode(array("success"=>true));
   }
   else{
