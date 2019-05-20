@@ -26,6 +26,7 @@
     echo json_encode(array("success"=>true));
   }
   else{
-    echo json_encode(array("success"=>false));
+    echo json_encode(array("success"=>false, "message"=>$user) );
+
   }
 ?>
