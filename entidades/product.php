@@ -27,6 +27,7 @@
       $stmt->bindParam(":subcategoria",$subcategoria);
       $stmt->bindParam(":stock",$stock);
       if ($stmt->execute()) {
+        $this->connection.close();
         return true;
       } else {
         return false;
@@ -40,6 +41,7 @@
       $stmt = $this->connection->prepare($query);
       $stmt->bindParam(":nombre_categoria", $categoria);
       $stmt->execute();
+      $this->connection.close();
       return $stmt;
     }
 

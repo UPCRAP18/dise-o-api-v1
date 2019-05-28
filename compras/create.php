@@ -18,12 +18,10 @@
   $items = $_POST['items'];
   $fecha_compra = date('Y-m-d H:i:s');
 
-
-
   if($compra->registrar_compra($id_usuario,$total_pagado,$items,$fecha_compra)){
     echo json_encode(array("success"=>true));
-  }
-  else{
+  } else{
     echo json_encode(array("success"=>false));
   }
+  $this->connection.close();
 ?>

@@ -26,6 +26,7 @@
       $stmt->bindParam(":articulos",$total_productos);
       $stmt->bindParam(":fecha",$fecha);
       if ($stmt->execute()) {
+        $this->connection.close();
         return true;
       } else {
         return false;
@@ -38,6 +39,7 @@
       $stmt = $this->connection->prepare($query);
       $stmt->bindParam(":id_usuario", $id_usuario);
       $stmt->execute();
+      $this->connection.close();
       return $stmt;
     }
 

@@ -41,5 +41,6 @@
       "success"=>false,
       "message"=>"No se ha encontrado ningun usuario"));
   }
+  $this->connection.close();
 
 ?>
