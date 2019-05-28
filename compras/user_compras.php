@@ -37,13 +37,11 @@
     }
 
     echo json_encode($compras);
-    $this->connection.close();
   }else {
     //No hay datos
     echo json_encode(array(
       "success"=>false,
       "message"=>"No se ha encontrado ningun producto"));
-      $this->connection.close();
   }
 
 ?>

@@ -30,7 +30,6 @@
       $stmt->bindParam(":nick",$nick);
       $stmt->bindParam(":pwd",$pwd);
       if ($stmt->execute()) {
-        $this->connection.close();
         return true;
       } else {
         return false;
@@ -44,7 +43,6 @@
       $stmt->bindParam(":email", $email);
       $stmt->bindParam(":pwd", $pwd);
       $stmt->execute();
-      $this->connection.close();
       return $stmt;
     }
 
@@ -59,7 +57,6 @@
       $stmt->bindParam(":nick",$nickname);
       $stmt->bindParam(":id",$id);
       if ($stmt->execute()) {
-        $this->connection.close();
         return true;
       } else {
         return false;

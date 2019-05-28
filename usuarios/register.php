@@ -24,12 +24,10 @@
   $nick = $_POST['nickname'];
   $password = $_POST['password'];
 
-
   if($user->crear_usuario($nombre, $email, $ap_pat, $ap_mat, $nick, $password)){
-    echo json_encode(array("success"=>true));
+    echo json_encode(array("success"=>true, "data" => $nombre));
   }
   else{
     echo json_encode(array("success"=>false));
   }
-  $this->connection.close();
 ?>

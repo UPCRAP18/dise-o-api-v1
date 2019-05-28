@@ -27,5 +27,4 @@
   else{
     echo json_encode(array("success"=>false, "message"=>$user) );
   }
-  $this->connection.close();
 ?>

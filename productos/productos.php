@@ -48,6 +48,5 @@
       "success"=>false,
       "message"=>"No se ha encontrado ningun producto"));
   }
-  $this->connection.close();
 
 ?>
